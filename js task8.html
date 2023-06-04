@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .train-container {
+      position: relative;
+      width: 500px;
+      height: 230px;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
+    
+    .train {
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      width: 200px;
+      height: 100px;
+      background-color: rgb(76, 150, 109);
+      animation: trainAnimation 5s linear infinite;
+    }
+    
+    @keyframes trainAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+<body>
+<h> Click the following buttons to handle the animations</h>
+  <div class="train-container">
+    <div class="train"></div>
+  </div>
+
+  <button id="startButton">Start</button>
+  <button id="stopButton">Stop</button>
+
+  <script>
+    const train = document.querySelector('.train');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    let animation;
+
+    startButton.addEventListener('click', startAnimation);
+    stopButton.addEventListener('click', stopAnimation);
+
+    function startAnimation() {
+      train.style.animationPlayState = 'running';
+    }
+
+    function stopAnimation() {
+      train.style.animationPlayState = 'paused';
+    }
+  </script>
+</body>
+</html>

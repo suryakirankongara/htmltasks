@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .form-group {
+      margin-bottom: 6px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #577a83;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: rgb(197, 90, 90);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <form action="index.php" method="post" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+      <span id="name-error" class="error-message"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+      <span id="email-error" class="error-message"></span>
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="url" name="website" id="website" required>
+      <span id="website-error" class="error-message"></span>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" cols="50" required></textarea>
+      <span id="message-error" class="error-message"></span>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var website = document.getElementById("website").value;
+      var message = document.getElementById("message").value;
+
+      // Validate name
+      if (name === "") {
+        document.getElementById("name-error").innerHTML = "This field is required.";
+        return false;
+      } else {
+        document.getElementById("name-error").innerHTML = "";
+      }
+
+      // Validate email
+      if (email === "") {
+        document.getElementById("email-error").innerHTML = "Please enter your email address.";
+        return false;
+      } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+        document.getElementById("email-error").innerHTML = "A valid email address is required.";
+        return false;
+      } else {
+        document.getElementById("email-error").innerHTML = "";
+      }
+
+      // Validate website
+      if (website === "") {
+        document.getElementById("website-error").innerHTML = "Please enter your website address.";
+        return false;
+      } else if (!/^https?:\/\/[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/.test(website)) {
+        document.getElementById("website-error").innerHTML = "A valid URL is required.";
+        return false;
+      } else {
+        document.getElementById("website-error").innerHTML = "";
+      }
+
+      // Validate message
+      if (message === "") {
+        document.getElementById("message-error").innerHTML = "This field is required.";
+        return false;
+      } else {
+        document.getElementById("message-error").innerHTML = "";
+      }
+
+      // Submit form
+      return true;
+    }
+  </script>
+</body>
+</html>

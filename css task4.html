@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vertical Navigation Bar</title>
+  <style>
+    table {
+      border: 2px solid black;
+      background: rgb(135, 235, 230);
+      font-size: 40px;
+      width: 200px;
+    }
+
+    table:hover {
+      font-size: 60px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .l {
+      text-decoration: none;
+      color: black;
+    }
+
+    tr:hover {
+      background: orange;
+    }
+
+    .l:hover {
+      color: white;
+    }
+
+    p {
+      font-style: oblique;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p:hover {
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Vertical navigation</h1>
+  <div class="nav">
+    <table>
+      <tr>
+        <th><a class="l" href="https://www.google.com">HOME</a></th>
+      </tr>
+      <tr>
+        <th><a class="l" href="https://www.ethnus.com">Java</a></th>
+      </tr>
+      <tr>
+        <th><a class="l" href="https://www.ethnus.com">CSS</a></th>
+      </tr>
+      <tr>
+        <th><a class="l" href="https://www.ethnus.com">HTML</a></th>
+      </tr>
+      <tr>
+        <th><a class="l" href="https://www.ethnus.com">Bootstrap</a></th>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

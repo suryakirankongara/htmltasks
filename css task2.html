@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+
+    .custom-list {
+      list-style: none;
+      counter-reset: custom-counter;
+      padding-left: 0;
+    }
+
+    .custom-list li {
+      position: relative;
+      counter-increment: custom-counter;
+      margin-bottom: 10px;
+      padding-left: 30px;
+      color: #555;
+      font-family: Georgia, serif;
+      font-size: 16px;
+    }
+
+    .custom-list li::before {
+      content: counter(custom-counter);
+      position: absolute;
+      left: -20px;
+      top: 0;
+      font-size: 18px;
+      color: #999;
+    }
+
+    .list-icon {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #FFD700; /* Change the color of the icon */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="custom-list">
+      <li><span class="list-icon">&#9733;</span> Surya</li>
+      <li><span class="list-icon">&#9733;</span> Jessie</li>
+      <li><span class="list-icon">&#9733;</span> Mukku</li>
+      <li><span class="list-icon">&#9733;</span> Somesh</li>
+      <li><span class="list-icon">&#9733;</span> Bharath</li>
+    </ul>
+  </div>
+</body>
+
+</html>
